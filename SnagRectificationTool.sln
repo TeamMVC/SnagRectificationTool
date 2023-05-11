@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnagRectificationTool", "SnagRectificationTool\SnagRectificationTool.csproj", "{4F54B94D-85A1-4782-8FC6-E5DDB02B103A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F54B94D-85A1-4782-8FC6-E5DDB02B103A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F54B94D-85A1-4782-8FC6-E5DDB02B103A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F54B94D-85A1-4782-8FC6-E5DDB02B103A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F54B94D-85A1-4782-8FC6-E5DDB02B103A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D98674B-627B-44BC-8695-9B8A8EF47DD4}
+	EndGlobalSection
+EndGlobal
