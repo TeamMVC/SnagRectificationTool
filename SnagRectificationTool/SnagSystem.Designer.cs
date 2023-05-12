@@ -47,6 +47,7 @@ namespace SnagRectificationTool
             this.btnAeroEngine.TabIndex = 0;
             this.btnAeroEngine.Text = "AERO ENGINE";
             this.btnAeroEngine.UseVisualStyleBackColor = true;
+            this.btnAeroEngine.Click += new System.EventHandler(this.btnAeroEngine_Click);
             // 
             // button2
             // 
@@ -114,6 +115,8 @@ namespace SnagRectificationTool
             this.Controls.Add(this.btnAeroEngine);
             this.Name = "SnagSystem";
             this.Text = "SnagSystem";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.SnagSystem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
