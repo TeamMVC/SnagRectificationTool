@@ -50,6 +50,8 @@ namespace SnagRectificationTool
             this.txtunit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.cbAf = new System.Windows.Forms.ComboBox();
+            this.cbEng = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -60,6 +62,7 @@ namespace SnagRectificationTool
             this.button1.TabIndex = 39;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtofstrt
             // 
@@ -215,6 +218,30 @@ namespace SnagRectificationTool
             this.label10.TabIndex = 40;
             this.label10.Text = "DATA CAPTURING – AEROENGINE";
             // 
+            // cbAf
+            // 
+            this.cbAf.FormattingEnabled = true;
+            this.cbAf.Items.AddRange(new object[] {
+            "Hour",
+            "Minute",
+            "Second"});
+            this.cbAf.Location = new System.Drawing.Point(669, 172);
+            this.cbAf.Name = "cbAf";
+            this.cbAf.Size = new System.Drawing.Size(121, 23);
+            this.cbAf.TabIndex = 41;
+            // 
+            // cbEng
+            // 
+            this.cbEng.FormattingEnabled = true;
+            this.cbEng.Items.AddRange(new object[] {
+            "Hour",
+            "Minute",
+            "Second"});
+            this.cbEng.Location = new System.Drawing.Point(669, 211);
+            this.cbEng.Name = "cbEng";
+            this.cbEng.Size = new System.Drawing.Size(121, 23);
+            this.cbEng.TabIndex = 42;
+            // 
             // DataCapturingAeroEngine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -222,6 +249,8 @@ namespace SnagRectificationTool
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(968, 511);
+            this.Controls.Add(this.cbEng);
+            this.Controls.Add(this.cbAf);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtofstrt);
@@ -245,6 +274,7 @@ namespace SnagRectificationTool
             this.Name = "DataCapturingAeroEngine";
             this.Text = "DataCapturingAeroEngine";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.DataCapturingAeroEngine_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +302,7 @@ namespace SnagRectificationTool
         private System.Windows.Forms.TextBox txtunit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbAf;
+        private System.Windows.Forms.ComboBox cbEng;
     }
 }

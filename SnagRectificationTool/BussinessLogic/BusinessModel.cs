@@ -29,5 +29,34 @@ namespace SnagRectificationTool.BussinessLogic
            var  result = con.Query<Models.SubSystem>("GetRectifySubSystem", param: param, commandType: CommandType.StoredProcedure).ToList();
             return result;
         }
+
+
+        public List<Models.ReqtificationItems> GetRectItems(int subSystemId)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@subSystemId", subSystemId); 
+             var result = con.Query<Models.ReqtificationItems>("GetRectificationItems", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+
+        public int SaveAeroEngineSubstemForm(Models.SubsytemInitialFormModel aero)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@RefId", aero.RefId);
+            param.Add("@Unit", aero.Unit);
+            param.Add("@Ac_no", aero.AC_No);
+            param.Add("@StartDt", aero.StartDate);
+            param.Add("@AFHrs", aero.AFHrs);
+            param.Add("@AFVal", aero.AFVal);
+            param.Add("@ENGHrs", aero.ENGHrs); 
+            param.Add("@ENGVal", aero.ENGVal);
+            param.Add("@BriefOfSnag", aero.BriefOfSnag);
+            param.Add("@ENGOilLife", aero.ENGOilLife);
+            param.Add("@SpareOnEXTN", aero.SpareOnEXTN);
+            param.Add("@date", aero.Date);
+
+            var result = con.Execute("InsertInitialDataCapture", param: param, commandType: CommandType.StoredProcedure);
+            return result;
+        }
     }
 }

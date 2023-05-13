@@ -1,7 +1,7 @@
 ﻿
 namespace SnagRectificationTool
 {
-    partial class SubSystem
+    partial class RectificationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,45 +29,31 @@ namespace SnagRectificationTool
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSystemTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // lblSystemTitle
-            // 
-            this.lblSystemTitle.AutoSize = true;
-            this.lblSystemTitle.Location = new System.Drawing.Point(263, 56);
-            this.lblSystemTitle.Name = "lblSystemTitle";
-            this.lblSystemTitle.Size = new System.Drawing.Size(38, 15);
-            this.lblSystemTitle.TabIndex = 0;
-            this.lblSystemTitle.Text = "label1";
-            // 
             // panel1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(62, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(617, 263);
+            this.panel1.TabIndex = 0;
             // 
-            // SubSystem
+            // RectificationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblSystemTitle);
-            this.Name = "SubSystem";
-            this.Text = "SubSystem";
-            this.Load += new System.EventHandler(this.SubSystem_Load);
+            this.Name = "RectificationForm";
+            this.Text = "RectificationForm";
+            this.Load += new System.EventHandler(this.RectificationForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblSystemTitle;
         private System.Windows.Forms.Panel panel1;
     }
 }
