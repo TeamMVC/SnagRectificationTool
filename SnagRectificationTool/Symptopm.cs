@@ -11,48 +11,45 @@ using System.Windows.Forms;
 
 namespace SnagRectificationTool
 {
-    public partial class SubSystem : Form
+    public partial class Symptopm : Form
     {
         BusinessModel bdsystem = new BusinessModel();
-        Models.System sysObj = new Models.System();
-        List<Models.SubSystem> SubsysObj = new List<Models.SubSystem>();
-        
-        public SubSystem()
+        int _RectificationId;
+        string _refId;
+        public Symptopm()
         {
             InitializeComponent();
         }
 
-        public void subSystemofAero()
+        public void RectificationId(int id,string refid)
         {
-            var resultSystem = bdsystem.GetSystem(1);
-            sysObj.SystemID = resultSystem.SystemID;
-            sysObj.SystemName = resultSystem.SystemName;
-
-            SubsysObj = bdsystem.GetSubSystem(sysObj.SystemID);
-       
+            _RectificationId = id;
+            _refId = refid;
         }
-        private void SubSystem_Load(object sender, EventArgs e)
+        private void Symptopm_Load(object sender, EventArgs e)
         {
+           var listSymptom= bdsystem.GetSymptom(_RectificationId);
+
             int x = 33, y = 29;
             int top = 80;
             int left = 50;
-            lblSystemTitle.Text = sysObj.SystemName +"SELECT SUBSYSTEM";
-            for (int i = 0; i < SubsysObj.Count; i++)
+            //lblSystemTitle.Text = sysObj.SystemName + "SELECT SUBSYSTEM";
+            for (int i = 0; i < listSymptom.Count; i++)
             {
                 Button buttonDynamic = new Button();
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
-                buttonDynamic.Text = SubsysObj[i].SubSystemName;
+                buttonDynamic.Text = listSymptom[i].Symptom;
                 top += buttonDynamic.Height + 2;
                 buttonDynamic.Width = 500;
-                buttonDynamic.Name = Convert.ToString(SubsysObj[i].SubSystemId);
+                buttonDynamic.Name = Convert.ToString(listSymptom[i].RectificationId);
                 buttonDynamic.Click += ButtonDynamic_Click;
                 panel1.Controls.Add(buttonDynamic);
-               
+
             }
             this.Controls.Add(panel1);
         }
-        
+
         private void ButtonDynamic_Click(object sender, EventArgs e)
         {
             DataCapturingAeroEngine sbobj = new DataCapturingAeroEngine();
@@ -60,6 +57,24 @@ namespace SnagRectificationTool
             sbobj.getSubstemInformation(buttonDynamic.Name, buttonDynamic.Text);
             this.Hide();
             sbobj.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            this.Hide();
+            bdsystem.RemovedInitialFormData(_refId);
+            home.Show();
+        }
+
+        private void btnSymptonAnalyse_Click(object sender, EventArgs e)
+        {
+            Steps stepObj = new Steps();
+            var AllStepsResult=bdsystem.SendStepsByRectfid(_RectificationId);
+            stepObj.GetAllStepsDetail(AllStepsResult, _refId);
+            this.Hide();
+            stepObj.Show();
+
         }
     }
 }

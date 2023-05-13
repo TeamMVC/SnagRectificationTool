@@ -63,7 +63,7 @@ namespace SnagRectificationTool
             this.Hide();
 
             RectificationForm rectificationForm = new RectificationForm();
-            rectificationForm.ShowRectForm(rectdata);
+            rectificationForm.ShowRectForm(rectdata, sb.RefId);
             rectificationForm.Show();
 
         }

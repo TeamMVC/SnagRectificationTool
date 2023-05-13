@@ -16,14 +16,16 @@ namespace SnagRectificationTool
         BusinessModel bdsystem = new BusinessModel();
         Models.System sysObj = new Models.System();
         List<Models.ReqtificationItems> _listRectificationItems = new List<Models.ReqtificationItems>();
+        string _RefId;
         public RectificationForm()
         {
             InitializeComponent();
         }
 
-        public void ShowRectForm(List<Models.ReqtificationItems> listRectificationItems)
+        public void ShowRectForm(List<Models.ReqtificationItems> listRectificationItems,string RefId)
         {
             _listRectificationItems = listRectificationItems;
+            _RefId = RefId;
         }
 
         private void RectificationForm_Load(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace SnagRectificationTool
                 buttonDynamic.Width = 500;
                 buttonDynamic.Name = Convert.ToString(_listRectificationItems[i].RectID);
                 buttonDynamic.Click += ButtonDynamic_Click;
+               
                 panel1.Controls.Add(buttonDynamic);
 
             }
@@ -52,13 +55,11 @@ namespace SnagRectificationTool
 
         private void ButtonDynamic_Click(object sender, EventArgs e)
         {
-            //DataCapturingAeroEngine sbobj = new DataCapturingAeroEngine();
-            //Button buttonDynamic = (Button)sender;
-            //sbobj.getSubstemInformation(buttonDynamic.Name, buttonDynamic.Text);
-            //this.Hide();
-            //sbobj.Show();
-
-
+            Button buttonDynamic = (Button)sender;
+            Symptopm spObj = new Symptopm();
+            spObj.RectificationId(Convert.ToInt32(buttonDynamic.Name), _RefId);
+            this.Hide();
+            spObj.Show();
         }
 
     }
