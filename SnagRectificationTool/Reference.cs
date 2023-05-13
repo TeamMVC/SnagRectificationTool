@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SnagRectificationTool
 {
-    public partial class Home : Form
+    public partial class Reference : Form
     {
-        public Home()
+        public Reference()
         {
             InitializeComponent();
-          
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-          
-            SnagSystem snag = new SnagSystem();
-            snag.Show();
-            this.Hide();
-        }
-
     }
 }

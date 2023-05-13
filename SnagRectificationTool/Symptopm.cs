@@ -52,11 +52,11 @@ namespace SnagRectificationTool
 
         private void ButtonDynamic_Click(object sender, EventArgs e)
         {
-            DataCapturingAeroEngine sbobj = new DataCapturingAeroEngine();
-            Button buttonDynamic = (Button)sender;
-            sbobj.getSubstemInformation(buttonDynamic.Name, buttonDynamic.Text);
-            this.Hide();
-            sbobj.Show();
+            //DataCapturingAeroEngine sbobj = new DataCapturingAeroEngine();
+            //Button buttonDynamic = (Button)sender;
+            //sbobj.getSubstemInformation(buttonDynamic.Name, buttonDynamic.Text);
+            //this.Hide();
+            //sbobj.Show();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -70,8 +70,11 @@ namespace SnagRectificationTool
         private void btnSymptonAnalyse_Click(object sender, EventArgs e)
         {
             Steps stepObj = new Steps();
-            var AllStepsResult=bdsystem.SendStepsByRectfid(_RectificationId);
-            stepObj.GetAllStepsDetail(AllStepsResult, _refId);
+            _refId = "1";
+            //var AllStepsResult=bdsystem.SendStepsByRectfid(_RectificationId);
+            var AllStepsResult = bdsystem.SendStepsByRectfid(1);
+           // stepObj.GetAllStepsDetail(AllStepsResult, _refId);
+              stepObj.GetAllStepsDetail(AllStepsResult, _refId, 1);
             this.Hide();
             stepObj.Show();
 

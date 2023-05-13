@@ -13,7 +13,7 @@ namespace SnagRectificationTool.BussinessLogic
 
     public class BusinessModel
     {
-        static string ConString = "Data Source=AZAM-PC\\SQLEXPRESS; Integrated Security=true; Initial Catalog=SnagRactificationTool;";
+        static string ConString = "Data Source=DESKTOP-B666D0S; Integrated Security=true; Initial Catalog=SnagRactificationTool;";
         SqlConnection con = new SqlConnection(ConString);
         public Models.System GetSystem(int id)
         {
@@ -79,14 +79,76 @@ namespace SnagRectificationTool.BussinessLogic
             return result;
         }
 
-
-        
-
-             public List<Models.StepsModel> SendStepsByRectfid(int RectificationId)
+        public List<Models.StepsModel> SendStepsByRectfid(int RectificationId)
         {
             DynamicParameters param = new DynamicParameters();
             param.Add("@RectificationId", RectificationId);
             var result = con.Query<Models.StepsModel>("GetRectificationSteps", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public List<Models.StepsModel> SendStepsByRectfid(int RectificationId,int StepID)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@RectificationId", RectificationId);
+            param.Add("@StepID", StepID);
+            var result = con.Query<Models.StepsModel>("GetRectificationStepsById", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public List<Models.ReqtificationItems> GetRectdataByRectfid(int RectificationId)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@RectificationId", RectificationId);
+            var result = con.Query<Models.ReqtificationItems>("GetRectificationNameByID", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public List<Models.StepsData> GetModelStepsComponentData(int StepID)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@StepID", StepID);
+            var result = con.Query<Models.StepsData>("GetRectificationProcedure", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public List<Models.StepReferenceData> GetModelStepsReferenceData(int StepID)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@StepID", StepID);
+            var result = con.Query<Models.StepReferenceData>("GetRectificationStepReferences", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public List<Models.StepReferenceData> GetModelStepsReferenceData(int StepID,int ID )
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@StepID", StepID);
+            param.Add("@StepReferences", StepID);
+            var result = con.Query<Models.StepReferenceData>("GetRectificationStepReferencesById", param: param, commandType: CommandType.StoredProcedure).ToList();
+            return result;
+        }
+        public int UpdateCompletionForm(Models.SubsytemInitialFormModel aero)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@RefId", aero.RefId);
+            param.Add("@DateOfCompletion", aero.DateOfCompletion);
+            param.Add("@TimeForRepairHrs", aero.TimeForRepairHrs);
+
+            param.Add("@MANPOWER_UTILISED", aero.MANPOWER_UTILISED);
+            param.Add("@AIR_FRAME", aero.AIR_FRAME);
+            param.Add("@ELECT", aero.ELECT);
+            param.Add("@AEROENGINE", aero.AEROENGINE);
+
+            var result = con.Execute("UpdateCompletionForm", param: param, commandType: CommandType.StoredProcedure);
+            return result;
+        }
+        public Models.SubsytemInitialFormModel validReferenceId(string referenceId)
+        {
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@referenceId", referenceId);
+            var result = con.Query<Models.SubsytemInitialFormModel>("GetReference", param: param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+
+            return result;
+        }
+        public List<Models.SubSystem> GetAllSubSystem()
+        {
+            var result = con.Query<Models.SubSystem>("GetAllSubsystem", commandType: CommandType.StoredProcedure).ToList();
             return result;
         }
     }

@@ -31,74 +31,108 @@ namespace SnagRectificationTool
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnagSystem));
             this.btnAeroEngine = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnElect = new System.Windows.Forms.Button();
             this.btnAirFrame = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAeroEngine
             // 
-            this.btnAeroEngine.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAeroEngine.Location = new System.Drawing.Point(27, 153);
+            this.btnAeroEngine.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAeroEngine.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAeroEngine.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnAeroEngine.Location = new System.Drawing.Point(58, 195);
             this.btnAeroEngine.Name = "btnAeroEngine";
-            this.btnAeroEngine.Size = new System.Drawing.Size(218, 98);
+            this.btnAeroEngine.Size = new System.Drawing.Size(218, 73);
             this.btnAeroEngine.TabIndex = 0;
             this.btnAeroEngine.Text = "AERO ENGINE";
-            this.btnAeroEngine.UseVisualStyleBackColor = true;
+            this.btnAeroEngine.UseVisualStyleBackColor = false;
             this.btnAeroEngine.Click += new System.EventHandler(this.btnAeroEngine_Click);
             // 
-            // button2
+            // BtnElect
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(276, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 98);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "ELECT";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnElect.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.BtnElect.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnElect.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BtnElect.Location = new System.Drawing.Point(304, 195);
+            this.BtnElect.Name = "BtnElect";
+            this.BtnElect.Size = new System.Drawing.Size(218, 73);
+            this.BtnElect.TabIndex = 1;
+            this.BtnElect.Text = "ELECT";
+            this.BtnElect.UseVisualStyleBackColor = false;
+            this.BtnElect.Click += new System.EventHandler(this.BtnElect_Click);
             // 
             // btnAirFrame
             // 
-            this.btnAirFrame.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAirFrame.Location = new System.Drawing.Point(535, 153);
+            this.btnAirFrame.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAirFrame.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAirFrame.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnAirFrame.Location = new System.Drawing.Point(563, 195);
             this.btnAirFrame.Name = "btnAirFrame";
-            this.btnAirFrame.Size = new System.Drawing.Size(218, 98);
+            this.btnAirFrame.Size = new System.Drawing.Size(218, 73);
             this.btnAirFrame.TabIndex = 2;
             this.btnAirFrame.Text = "AIR FRAME";
-            this.btnAirFrame.UseVisualStyleBackColor = true;
+            this.btnAirFrame.UseVisualStyleBackColor = false;
+            this.btnAirFrame.Click += new System.EventHandler(this.btnAirFrame_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(236, 36);
+            this.label1.Location = new System.Drawing.Point(276, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(442, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "SELECT SYSTEM TO RECTIFY  SNAG ";
             // 
-            // textBox1
+            // btnSearch
             // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.Location = new System.Drawing.Point(632, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "SEARCH YOUR SNAG HERE";
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(256, 23);
-            this.textBox1.TabIndex = 4;
+            this.btnSearch.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSearch.Location = new System.Drawing.Point(1028, 136);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(110, 37);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(894, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 83);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1067, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(105, 83);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(787, 136);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(235, 30);
+            this.comboBox1.TabIndex = 11;
             // 
             // SnagSystem
             // 
@@ -106,17 +140,22 @@ namespace SnagRectificationTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1161, 742);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1184, 811);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAirFrame);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnElect);
             this.Controls.Add(this.btnAeroEngine);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SnagSystem";
             this.Text = "SnagSystem";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SnagSystem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,10 +164,12 @@ namespace SnagRectificationTool
         #endregion
 
         private System.Windows.Forms.Button btnAeroEngine;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnElect;
         private System.Windows.Forms.Button btnAirFrame;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

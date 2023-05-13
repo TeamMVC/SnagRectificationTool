@@ -23,7 +23,14 @@ namespace SnagRectificationTool.Models
         public DateTime Date { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
-        
+        public DateTime? DateOfCompletion { get; set; }
+        public string TimeForRepairHrs { get; set; }
+        public string Status { get; set; }
+        public string MANPOWER_UTILISED { get; set; }
+        public string AIR_FRAME { get; set; }
+        public string ELECT { get; set; }
+        public string AEROENGINE { get; set; }
+
     }
 }
 

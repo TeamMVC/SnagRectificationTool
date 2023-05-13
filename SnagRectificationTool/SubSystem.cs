@@ -22,24 +22,27 @@ namespace SnagRectificationTool
             InitializeComponent();
         }
 
-        public void subSystemofAero()
+        public void subSystemofAero(int id)
         {
-            var resultSystem = bdsystem.GetSystem(1);
+            var resultSystem = bdsystem.GetSystem(id);
             sysObj.SystemID = resultSystem.SystemID;
             sysObj.SystemName = resultSystem.SystemName;
 
             SubsysObj = bdsystem.GetSubSystem(sysObj.SystemID);
-       
+
         }
         private void SubSystem_Load(object sender, EventArgs e)
         {
             int x = 33, y = 29;
-            int top = 80;
-            int left = 50;
-            lblSystemTitle.Text = sysObj.SystemName +"SELECT SUBSYSTEM";
+            int top = 150;
+            int left = 300;
+            lblSystemTitle.Text = sysObj.SystemName +" SELECT SUBSYSTEM";
             for (int i = 0; i < SubsysObj.Count; i++)
             {
                 Button buttonDynamic = new Button();
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 9);
+                buttonDynamic.BackColor = Color.MediumSlateBlue;
+                buttonDynamic.ForeColor =Color.White;
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
                 buttonDynamic.Text = SubsysObj[i].SubSystemName;
