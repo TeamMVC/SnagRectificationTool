@@ -40,14 +40,15 @@ namespace SnagRectificationTool
             for (int i = 0; i < SubsysObj.Count; i++)
             {
                 Button buttonDynamic = new Button();
-                buttonDynamic.Font = new Font("Yu Gothic Medium", 9);
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 15, FontStyle.Bold);
                 buttonDynamic.BackColor = Color.MediumSlateBlue;
                 buttonDynamic.ForeColor =Color.White;
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
                 buttonDynamic.Text = SubsysObj[i].SubSystemName;
-                top += buttonDynamic.Height + 2;
+                top += buttonDynamic.Height + 30;
                 buttonDynamic.Width = 500;
+                buttonDynamic.Height = 50;
                 buttonDynamic.Name = Convert.ToString(SubsysObj[i].SubSystemId);
                 buttonDynamic.Click += ButtonDynamic_Click;
                 panel1.Controls.Add(buttonDynamic);
@@ -63,6 +64,13 @@ namespace SnagRectificationTool
             sbobj.getSubstemInformation(buttonDynamic.Name, buttonDynamic.Text);
             this.Hide();
             sbobj.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SnagSystem snag = new SnagSystem();
+            snag.Show();
+            this.Hide();
         }
     }
 }

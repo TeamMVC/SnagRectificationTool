@@ -39,14 +39,15 @@ namespace SnagRectificationTool
             {
 
                 Button buttonDynamic = new Button();
-                buttonDynamic.Font = new Font("Yu Gothic Medium", 9);
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 15, FontStyle.Bold);
                 buttonDynamic.BackColor = Color.MediumSlateBlue;
                 buttonDynamic.ForeColor = Color.White;
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
                 buttonDynamic.Text = _listRectificationItems[i].RectificationItems;
-                top += buttonDynamic.Height + 2;
+                top += buttonDynamic.Height + 30;
                 buttonDynamic.Width = 500;
+                buttonDynamic.Height = 50;
                 buttonDynamic.Name = Convert.ToString(_listRectificationItems[i].RectID);
                 buttonDynamic.Click += ButtonDynamic_Click;
                 label1.Text = _listRectificationItems[i].SubsystemName;
@@ -66,5 +67,12 @@ namespace SnagRectificationTool
             spObj.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataCapturingAeroEngine sbobj = new DataCapturingAeroEngine();
+            sbobj.getSubstemInformation(Convert.ToString( _listRectificationItems[0].SubSystemId), Convert.ToString(_listRectificationItems[0].SubsystemName));
+            this.Hide();
+            sbobj.Show();
+        }
     }
 }

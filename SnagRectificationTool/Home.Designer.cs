@@ -44,11 +44,11 @@ namespace SnagRectificationTool
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button1.Location = new System.Drawing.Point(164, 107);
+            this.button1.Location = new System.Drawing.Point(98, 193);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 50);
+            this.button1.Size = new System.Drawing.Size(250, 140);
             this.button1.TabIndex = 0;
             this.button1.Text = "SNAG RECTIFICATION";
             this.button1.UseVisualStyleBackColor = false;
@@ -57,11 +57,11 @@ namespace SnagRectificationTool
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.SystemColors.Window;
-            this.button5.Location = new System.Drawing.Point(639, 107);
+            this.button5.Location = new System.Drawing.Point(652, 193);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 50);
+            this.button5.Size = new System.Drawing.Size(250, 140);
             this.button5.TabIndex = 4;
             this.button5.Text = "POLICIES";
             this.button5.UseVisualStyleBackColor = false;
@@ -69,11 +69,11 @@ namespace SnagRectificationTool
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button6.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.Font = new System.Drawing.Font("Yu Gothic Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(385, 107);
+            this.button6.Location = new System.Drawing.Point(374, 193);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(193, 50);
+            this.button6.Size = new System.Drawing.Size(250, 140);
             this.button6.TabIndex = 5;
             this.button6.Text = "PERFORMANCE ANALYSIS";
             this.button6.UseVisualStyleBackColor = false;
@@ -81,11 +81,11 @@ namespace SnagRectificationTool
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.SystemColors.Window;
-            this.button7.Location = new System.Drawing.Point(825, 105);
+            this.button7.Location = new System.Drawing.Point(930, 193);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(178, 50);
+            this.button7.Size = new System.Drawing.Size(250, 140);
             this.button7.TabIndex = 6;
             this.button7.Text = "TECHNICAL LITERATURE";
             this.button7.UseVisualStyleBackColor = false;
@@ -93,10 +93,11 @@ namespace SnagRectificationTool
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(372, 37);
+            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(243, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(474, 23);
+            this.label1.Size = new System.Drawing.Size(731, 35);
             this.label1.TabIndex = 7;
             this.label1.Text = "ITERACTIVE SNAG RECTIFICATION TOOL(ISRT)";
             // 
@@ -104,7 +105,7 @@ namespace SnagRectificationTool
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(105, 83);
             this.pictureBox1.TabIndex = 8;
@@ -114,7 +115,7 @@ namespace SnagRectificationTool
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1067, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(1163, 17);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(105, 83);
             this.pictureBox2.TabIndex = 9;
@@ -126,7 +127,7 @@ namespace SnagRectificationTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 811);
+            this.ClientSize = new System.Drawing.Size(1284, 811);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -135,7 +136,6 @@ namespace SnagRectificationTool
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

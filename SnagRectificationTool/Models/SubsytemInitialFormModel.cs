@@ -17,7 +17,7 @@ namespace SnagRectificationTool.Models
         public string ENGHrs { get; set; }
         public int ENGVal { get; set; }
         public string BriefOfSnag { get; set; }
-        public string ENGOilLife { get; set; }
+        public DateTime ENGOilLife { get; set; }
         public string SpareOnEXTN { get; set; }
 
         public DateTime Date { get; set; }

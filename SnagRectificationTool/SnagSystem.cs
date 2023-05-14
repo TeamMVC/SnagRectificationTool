@@ -24,18 +24,18 @@ namespace SnagRectificationTool
             AutoCompleteStringCollection ac = new AutoCompleteStringCollection();
             List<Models.SubSystem> subSystems = new List<Models.SubSystem>();
             subSystems = bm.GetAllSubSystem();
-            
-            comboBox1.DataSource = subSystems;
-            comboBox1.DisplayMember = "SubSystemName";
-            comboBox1.ValueMember = "SubSystemId";
-
             foreach (var p in bm.GetAllSubSystem())
                 ac.Add(p.SubSystemName);
             comboBox1.AutoCompleteCustomSource = ac;
             comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
 
             comboBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
+           
+            comboBox1.DisplayMember = "SubSystemName";
+            comboBox1.ValueMember = "SubSystemId";
+            comboBox1.DataSource = subSystems;
+            comboBox1.Text= "SEARCH YOUR SNAG HERE";
+            
             //txtautobox.AutoCompleteCustomSource = ac;
 
         }
@@ -85,6 +85,13 @@ namespace SnagRectificationTool
                 sbobj.Show();
             }
           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home hm = new Home();
+            hm.Show();
+            this.Hide();
         }
     }
 }
