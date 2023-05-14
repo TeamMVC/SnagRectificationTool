@@ -58,8 +58,9 @@ namespace SnagRectificationTool
             sb.RefId = sixDigitNumber;
 
             bdsystem.SaveAeroEngineSubstemForm(sb);
-            MessageBox.Show("Please Note your Reference Id "+sb.RefId);
-            var rectdata= bdsystem.GetRectItems(Convert.ToInt32(_SubsystemId));
+            MessageBox.Show("Please Note your Reference Id " + sb.RefId);
+            var rectdata = bdsystem.GetRectItems(Convert.ToInt32(_SubsystemId));
+         
             this.Hide();
 
             RectificationForm rectificationForm = new RectificationForm();

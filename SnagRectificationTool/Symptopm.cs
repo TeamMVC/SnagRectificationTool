@@ -16,32 +16,39 @@ namespace SnagRectificationTool
         BusinessModel bdsystem = new BusinessModel();
         int _RectificationId;
         string _refId;
+        List<Models.ReqtificationItems> _listRectmodel;
         public Symptopm()
         {
             InitializeComponent();
         }
 
-        public void RectificationId(int id,string refid)
+        public void RectificationId(int id, string refid)
         {
             _RectificationId = id;
             _refId = refid;
         }
         private void Symptopm_Load(object sender, EventArgs e)
         {
-           var listSymptom= bdsystem.GetSymptom(_RectificationId);
-
+            var listSymptom = bdsystem.GetSymptom(_RectificationId);
+            _listRectmodel = bdsystem.GetRectdataByRectfid(Convert.ToInt32(_RectificationId));
             int x = 33, y = 29;
-            int top = 80;
-            int left = 50;
+            int top = 150;
+            int left = 350;
+            label1.Text = _listRectmodel[0].RectificationItems;
             //lblSystemTitle.Text = sysObj.SystemName + "SELECT SUBSYSTEM";
             for (int i = 0; i < listSymptom.Count; i++)
             {
                 Button buttonDynamic = new Button();
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 9);
+                buttonDynamic.BackColor = ColorTranslator.FromHtml("#B9D1EA");
+                //  buttonDynamic.BackColor = Color.LightSteelBlue;// "B9D1EA";
+                buttonDynamic.ForeColor = Color.Black;
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
                 buttonDynamic.Text = listSymptom[i].Symptom;
                 top += buttonDynamic.Height + 2;
                 buttonDynamic.Width = 500;
+                buttonDynamic.Height = 30;
                 buttonDynamic.Name = Convert.ToString(listSymptom[i].RectificationId);
                 buttonDynamic.Click += ButtonDynamic_Click;
                 panel1.Controls.Add(buttonDynamic);
@@ -70,11 +77,8 @@ namespace SnagRectificationTool
         private void btnSymptonAnalyse_Click(object sender, EventArgs e)
         {
             Steps stepObj = new Steps();
-            _refId = "1";
-            //var AllStepsResult=bdsystem.SendStepsByRectfid(_RectificationId);
-            var AllStepsResult = bdsystem.SendStepsByRectfid(1);
-           // stepObj.GetAllStepsDetail(AllStepsResult, _refId);
-              stepObj.GetAllStepsDetail(AllStepsResult, _refId, 1);
+            var AllStepsResult = bdsystem.SendStepsByRectfid(_RectificationId);
+            stepObj.GetAllStepsDetail(AllStepsResult, _refId, _RectificationId);
             this.Hide();
             stepObj.Show();
 

@@ -42,10 +42,10 @@ namespace SnagRectificationTool
             // lblSystemTitle
             // 
             this.lblSystemTitle.AutoSize = true;
-            this.lblSystemTitle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSystemTitle.Location = new System.Drawing.Point(395, 80);
+            this.lblSystemTitle.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSystemTitle.Location = new System.Drawing.Point(457, 78);
             this.lblSystemTitle.Name = "lblSystemTitle";
-            this.lblSystemTitle.Size = new System.Drawing.Size(42, 19);
+            this.lblSystemTitle.Size = new System.Drawing.Size(51, 23);
             this.lblSystemTitle.TabIndex = 0;
             this.lblSystemTitle.Text = "ABC";
             // 
@@ -59,14 +59,14 @@ namespace SnagRectificationTool
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 811);
+            this.panel1.Size = new System.Drawing.Size(1184, 811);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(867, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(1067, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(105, 83);
             this.pictureBox2.TabIndex = 11;
@@ -88,11 +88,12 @@ namespace SnagRectificationTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 811);
+            this.ClientSize = new System.Drawing.Size(1184, 811);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SubSystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SubSystem";
             this.Load += new System.EventHandler(this.SubSystem_Load);
             this.panel1.ResumeLayout(false);

@@ -18,6 +18,7 @@ namespace SnagRectificationTool
         string _referenceId;
         int stepcount;
         int _RectificationId;
+        List<Models.ReqtificationItems> _listRectmodel;
         public Steps()
         {
             InitializeComponent();
@@ -46,20 +47,24 @@ namespace SnagRectificationTool
             var listAllSteps = _listSteps;
             stepcount = listAllSteps.Count;
             int x = 33, y = 29;
-            int top = 80;
-            int left = 50;
+            int top = 200;
+            int left = 390;
             //lblSystemTitle.Text = sysObj.SystemName + "SELECT SUBSYSTEM";
+            _listRectmodel = bdsystem.GetRectdataByRectfid(Convert.ToInt32(_RectificationId));       
+            label2.Text = "SNAG:" + _listRectmodel[0].RectificationItems;
             for (int i = 0; i < listAllSteps.Count; i++)
             {
                  
                 LinkLabel buttonDynamic = new LinkLabel();
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
+                buttonDynamic.BorderStyle= BorderStyle.FixedSingle;
                 buttonDynamic.Text = listAllSteps[i].StepName + ' ' + listAllSteps[i].StepDetails;
                 top += buttonDynamic.Height + 2;
                 buttonDynamic.Width = 500;
-                buttonDynamic.BackColor = Color.AliceBlue;
-                buttonDynamic.ForeColor = Color.White;
+                buttonDynamic.BackColor = ColorTranslator.FromHtml("#B9D1EA");
+                buttonDynamic.ForeColor = Color.Black;
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 12);
                 buttonDynamic.Name = Convert.ToString(listAllSteps[i].RectificationId);
                 buttonDynamic.Click += ButtonDynamic_Click;
                
@@ -68,7 +73,7 @@ namespace SnagRectificationTool
             this.Controls.Add(panel1);
         }
 
-        private void btnComplete_Click(object sender, EventArgs e)
+        private void btncomplete_Click_1(object sender, EventArgs e)
         {
             SnagCompletionForm sbobj = new SnagCompletionForm();
             sbobj.getFormInformation(_RectificationId);

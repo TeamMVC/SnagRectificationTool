@@ -17,6 +17,7 @@ namespace SnagRectificationTool
         Models.System sysObj = new Models.System();
         List<Models.ReqtificationItems> _listRectificationItems = new List<Models.ReqtificationItems>();
         string _RefId;
+
         public RectificationForm()
         {
             InitializeComponent();
@@ -31,13 +32,16 @@ namespace SnagRectificationTool
         private void RectificationForm_Load(object sender, EventArgs e)
         {
             int x = 33, y = 29;
-            int top = 80;
-            int left = 50;
-           // lblSystemTitle.Text = sysObj.SystemName + "SELECT SUBSYSTEM";
+            int top = 150;
+            int left = 350;
+            // lblSystemTitle.Text = sysObj.SystemName + "SELECT SUBSYSTEM";
             for (int i = 0; i < _listRectificationItems.Count; i++)
             {
 
                 Button buttonDynamic = new Button();
+                buttonDynamic.Font = new Font("Yu Gothic Medium", 9);
+                buttonDynamic.BackColor = Color.MediumSlateBlue;
+                buttonDynamic.ForeColor = Color.White;
                 buttonDynamic.Left = left;
                 buttonDynamic.Top = top;
                 buttonDynamic.Text = _listRectificationItems[i].RectificationItems;
@@ -45,7 +49,7 @@ namespace SnagRectificationTool
                 buttonDynamic.Width = 500;
                 buttonDynamic.Name = Convert.ToString(_listRectificationItems[i].RectID);
                 buttonDynamic.Click += ButtonDynamic_Click;
-               
+                label1.Text = _listRectificationItems[i].SubsystemName;
                 panel1.Controls.Add(buttonDynamic);
 
             }

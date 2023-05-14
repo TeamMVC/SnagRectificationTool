@@ -10,8 +10,7 @@ namespace SnagRectificationTool.Models
     {
         public int RectID { get; set; }
         public int SubSystemId { get; set; }
-        public string RectificationItems { get; set; }
-        
-
+        public string RectificationItems { get; set; }        
+        public string SubsystemName { get; set; }
     }
 }

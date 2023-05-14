@@ -43,7 +43,7 @@ namespace SnagRectificationTool
                 {
                     Name = "pictureBox" + i,
                     Size = new Size(316, 320),
-                    Location = new Point(i * 316, 1),                               
+                    Location = new Point(i * 450, 150),                               
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.Zoom
                 };

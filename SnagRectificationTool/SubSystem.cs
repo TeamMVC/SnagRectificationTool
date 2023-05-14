@@ -35,7 +35,7 @@ namespace SnagRectificationTool
         {
             int x = 33, y = 29;
             int top = 150;
-            int left = 300;
+            int left = 350;
             lblSystemTitle.Text = sysObj.SystemName +" SELECT SUBSYSTEM";
             for (int i = 0; i < SubsysObj.Count; i++)
             {
